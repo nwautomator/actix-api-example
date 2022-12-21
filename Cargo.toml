@@ -1,0 +1,33 @@
+[package]
+name = "actix-api-example"
+version = "0.1.0"
+authors = ["Chris Freas <code@packetbusters.net>"]
+edition = "2021"
+license = "Apache-2.0 OR MIT"
+readme = "README.md"
+keywords = ["actix", "api", "rest", ""]
+repository = "https://github.com/nwautomator/actix-api-example"
+description = "Simple API to demonstrate Actix with Bunyan-based tracing"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+path = "src/main.rs"
+name = "actix-example"
+
+[dependencies]
+actix-web = "4"
+anyhow = "1.0.40"
+chrono = { version = "0.4.22", default-features = false, features = ["clock", "serde"] }
+fake = "~2.3"
+log = "0.4"
+rand = { version = "0.8", features=["std_rng"] }
+serde = {version = "1", features = ["derive"]}
+serde_json = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+tracing = "0.1.19"
+tracing-actix-web = "0.6"
+tracing-bunyan-formatter = "0.3"
+tracing-log = "0.1.1"
+tracing-subscriber = { version = "0.3", features = ["registry", "env-filter"] }
