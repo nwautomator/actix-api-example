@@ -7,7 +7,7 @@ use tracing_actix_web::TracingLogger;
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
-    let subscriber = get_subscriber("actix-example".into(), "info".into(), std::io::stdout);
+    let subscriber = get_subscriber("actix-api-example".into(), "info".into(), std::io::stdout);
     init_subscriber(subscriber);
     HttpServer::new(move || {
         App::new()
